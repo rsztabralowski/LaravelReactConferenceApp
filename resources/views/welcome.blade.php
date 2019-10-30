@@ -80,8 +80,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div id="react_js" class="title m-b-md">
                 </div>
 
                 <div class="links">
@@ -96,4 +95,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="js/app.js"></script>
 </html>

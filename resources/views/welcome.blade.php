@@ -42,6 +42,7 @@
 
             .content {
                 text-align: center;
+                width: 100%;
             }
 
             .title {
@@ -61,6 +62,16 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .front-title{
+                font-size: 40px;
+            }
+
+            .developers-subtitle{
+                font-size: 25px;
+            }
+
+
         </style>
     </head>
     <body>
@@ -80,18 +91,8 @@
             @endif
 
             <div class="content">
-                <div id="react_js" class="title m-b-md">
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <div id="welcome" class="m-b-md"></div>
+                <div id="map"></div>
             </div>
         </div>
     </body>

@@ -88960,9 +88960,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recompose */ "./node_modules/recompose/es/Recompose.js");
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mapStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mapStyles */ "./resources/js/components/mapStyles.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -88984,7 +88984,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
+ // import * as parkData from "./data/skateboard-parks.json";
 
 var _require = __webpack_require__(/*! react-google-maps/lib/components/addons/MarkerWithLabel */ "./node_modules/react-google-maps/lib/components/addons/MarkerWithLabel.js"),
     MarkerWithLabel = _require.MarkerWithLabel;
@@ -89003,31 +89003,28 @@ function (_Component) {
   _createClass(Map, [{
     key: "render",
     value: function render() {
-      var GoogleMapComponent = Object(recompose__WEBPACK_IMPORTED_MODULE_2__["compose"])(Object(recompose__WEBPACK_IMPORTED_MODULE_2__["withProps"])({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDD6AmUNDEme0dpWKSKdLembHzQ9J6-LKE&v=3.exp&libraries=geometry,drawing,places",
-        loadingElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          style: {
-            height: "100%"
-          }
-        }),
-        containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          style: {
-            height: "400px"
-          }
-        }),
-        mapElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          style: {
-            height: "100%"
-          }
-        })
-      }), react_google_maps__WEBPACK_IMPORTED_MODULE_3__["withScriptjs"], react_google_maps__WEBPACK_IMPORTED_MODULE_3__["withGoogleMap"])(function (props) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_3__["GoogleMap"], {
+      function Map() {
+        // const [selectedPark, setSelectedPark] = useState(null);
+        // useEffect(() => {
+        //   const listener = e => {
+        //     if (e.key === "Escape") {
+        //       setSelectedPark(null);
+        //     }
+        //   };
+        //   window.addEventListener("keydown", listener);
+        //   return () => {
+        //     window.removeEventListener("keydown", listener);
+        //   };
+        // }, []);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMap"], {
           defaultZoom: 16,
           defaultCenter: {
             lat: 55.8427777,
             lng: -4.4304389
-          } // options={{ scrollwheel: false}}>
-
+          },
+          defaultOptions: {
+            styles: _mapStyles__WEBPACK_IMPORTED_MODULE_3__["default"]
+          }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MarkerWithLabel, {
           position: {
             lat: 55.843110,
@@ -89040,14 +89037,33 @@ function (_Component) {
             padding: "12px",
             borderRadius: "10%"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "We are here!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_3__["Marker"], {
-          position: {
-            lat: 55.843110,
-            lng: -4.431183
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "We are here!")));
+      }
+
+      var MapWrapped = Object(react_google_maps__WEBPACK_IMPORTED_MODULE_2__["withScriptjs"])(Object(react_google_maps__WEBPACK_IMPORTED_MODULE_2__["withGoogleMap"])(Map));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          width: "100%",
+          height: "400px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapWrapped, {
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDD6AmUNDEme0dpWKSKdLembHzQ9J6-LKE",
+        loadingElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            height: '100%'
           }
-        }));
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMapComponent, null);
+        }),
+        containerElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            height: "400px"
+          }
+        }),
+        mapElement: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            height: "100%"
+          }
+        })
+      }));
     }
   }]);
 
@@ -89135,6 +89151,102 @@ function (_Component) {
 if (document.getElementById('welcome')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('welcome'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/mapStyles.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/mapStyles.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  featureType: "water",
+  elementType: "geometry",
+  stylers: [{
+    color: "#004358"
+  }]
+}, {
+  featureType: "landscape",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }]
+}, {
+  featureType: "poi",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }]
+}, {
+  featureType: "road.highway",
+  elementType: "geometry",
+  stylers: [{
+    color: "#fd7400"
+  }]
+}, {
+  featureType: "road.arterial",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }, {
+    lightness: -20
+  }]
+}, {
+  featureType: "road.local",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }, {
+    lightness: -17
+  }]
+}, {
+  elementType: "labels.text.stroke",
+  stylers: [{
+    color: "#ffffff"
+  }, {
+    visibility: "on"
+  }, {
+    weight: 0.9
+  }]
+}, {
+  elementType: "labels.text.fill",
+  stylers: [{
+    visibility: "on"
+  }, {
+    color: "#ffffff"
+  }]
+}, {
+  featureType: "poi",
+  elementType: "labels",
+  stylers: [{
+    visibility: "simplified"
+  }]
+}, {
+  elementType: "labels.icon",
+  stylers: [{
+    visibility: "off"
+  }]
+}, {
+  featureType: "transit",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }, {
+    lightness: -10
+  }]
+}, {}, {
+  featureType: "administrative",
+  elementType: "geometry",
+  stylers: [{
+    color: "#1f8a70"
+  }, {
+    weight: 0.7
+  }]
+}]);
 
 /***/ }),
 

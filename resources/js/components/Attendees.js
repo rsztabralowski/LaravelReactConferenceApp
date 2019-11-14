@@ -53,41 +53,6 @@ export default class Attendees extends React.Component {
     }
   }
 
-
-
-
-
-
-
-
-
-
-// export default class Attendees extends Component {
-//     render() {
-
-       
-//          function List()
-//          {
-
-//             var list = '';
-
-//                $.ajax({
-//                 url: '../eventbrite/eventbrite.php',
-//                 success: function(result)
-//                 {
-//                   return result;
-//                 }
-
-//             });
-//         }
-       
-
-//         return (
-//             <List />
-//             );
-//     }
-// }
-
 if (document.getElementById('attendees')) 
 {
     ReactDOM.render(<Attendees />, document.getElementById('attendees'));

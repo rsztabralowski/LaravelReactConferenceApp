@@ -7,8 +7,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-import mapStyles from "./mapStyles";
-// import * as parkData from "./data/skateboard-parks.json";
+// import mapStyles from "../mapStyles";
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 
 class Map extends Component 
@@ -17,29 +16,14 @@ class Map extends Component
   {
     function Map() 
     {
-      // const [selectedPark, setSelectedPark] = useState(null);
-
-      // useEffect(() => {
-      //   const listener = e => {
-      //     if (e.key === "Escape") {
-      //       setSelectedPark(null);
-      //     }
-      //   };
-      //   window.addEventListener("keydown", listener);
-
-      //   return () => {
-      //     window.removeEventListener("keydown", listener);
-      //   };
-      // }, []);
-
       return (
         <GoogleMap
           defaultZoom={16}
-          defaultCenter={{ lat: 55.8427777, lng: -4.4304389 }}
-          defaultOptions={{ styles: mapStyles }}
+          defaultCenter={{ lat: 55.9459745, lng: -3.2094916 }}
+          // defaultOptions={{ styles: mapStyles }}
         >
             <MarkerWithLabel
-              position={{ lat: 55.843110, lng: -4.431183 }}
+              position={{ lat: 55.946030, lng: -3.209921 }}
               labelAnchor={new google.maps.Point(0, 0)}
               labelStyle={{backgroundColor: "#7ad9ff", fontSize: "24px", padding: "12px", borderRadius: "10%"}}
             >

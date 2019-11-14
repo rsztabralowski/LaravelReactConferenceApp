@@ -14,3 +14,4 @@ require('./bootstrap');
 
 require('./components/Welcome');
 require('./components/GoogleMap');
+require('./components/Attendees');

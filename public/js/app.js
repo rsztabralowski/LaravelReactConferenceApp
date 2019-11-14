@@ -88900,6 +88900,8 @@ __webpack_require__(/*! ./components/Welcome */ "./resources/js/components/Welco
 
 __webpack_require__(/*! ./components/GoogleMap */ "./resources/js/components/GoogleMap.js");
 
+__webpack_require__(/*! ./components/Attendees */ "./resources/js/components/Attendees.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -88947,22 +88949,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/GoogleMap.js":
+/***/ "./resources/js/components/Attendees.js":
 /*!**********************************************!*\
-  !*** ./resources/js/components/GoogleMap.js ***!
+  !*** ./resources/js/components/Attendees.js ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Attendees; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
-/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _mapStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mapStyles */ "./resources/js/components/mapStyles.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -88984,7 +88984,133 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // import * as parkData from "./data/skateboard-parks.json";
+var Attendees =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Attendees, _React$Component);
+
+  function Attendees(props) {
+    var _this;
+
+    _classCallCheck(this, Attendees);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Attendees).call(this, props));
+    _this.state = {
+      error: null,
+      isLoaded: false,
+      list: []
+    };
+    return _this;
+  }
+
+  _createClass(Attendees, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch("../eventbrite/eventbrite.php").then(function (res) {
+        return res.json();
+      }).then(function (result) {
+        _this2.setState({
+          isLoaded: true,
+          list: result
+        });
+      }, function (error) {
+        _this2.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          error = _this$state.error,
+          isLoaded = _this$state.isLoaded,
+          list = _this$state.list;
+
+      if (error) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Error: ", error.message);
+      } else if (!isLoaded) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "total"
+        }, list.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, list.attendees.map(function (attendee) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: attendee
+          }, attendee);
+        })));
+      }
+    }
+  }]);
+
+  return Attendees;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // export default class Attendees extends Component {
+//     render() {
+//          function List()
+//          {
+//             var list = '';
+//                $.ajax({
+//                 url: '../eventbrite/eventbrite.php',
+//                 success: function(result)
+//                 {
+//                   return result;
+//                 }
+//             });
+//         }
+//         return (
+//             <List />
+//             );
+//     }
+// }
+
+
+
+
+if (document.getElementById('attendees')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Attendees, null), document.getElementById('attendees'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/GoogleMap.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/GoogleMap.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-google-maps */ "./node_modules/react-google-maps/lib/index.js");
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+ // import mapStyles from "../mapStyles";
 
 var _require = __webpack_require__(/*! react-google-maps/lib/components/addons/MarkerWithLabel */ "./node_modules/react-google-maps/lib/components/addons/MarkerWithLabel.js"),
     MarkerWithLabel = _require.MarkerWithLabel;
@@ -89004,31 +89130,17 @@ function (_Component) {
     key: "render",
     value: function render() {
       function Map() {
-        // const [selectedPark, setSelectedPark] = useState(null);
-        // useEffect(() => {
-        //   const listener = e => {
-        //     if (e.key === "Escape") {
-        //       setSelectedPark(null);
-        //     }
-        //   };
-        //   window.addEventListener("keydown", listener);
-        //   return () => {
-        //     window.removeEventListener("keydown", listener);
-        //   };
-        // }, []);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMap"], {
           defaultZoom: 16,
           defaultCenter: {
-            lat: 55.8427777,
-            lng: -4.4304389
-          },
-          defaultOptions: {
-            styles: _mapStyles__WEBPACK_IMPORTED_MODULE_3__["default"]
-          }
+            lat: 55.9459745,
+            lng: -3.2094916
+          } // defaultOptions={{ styles: mapStyles }}
+
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MarkerWithLabel, {
           position: {
-            lat: 55.843110,
-            lng: -4.431183
+            lat: 55.946030,
+            lng: -3.209921
           },
           labelAnchor: new google.maps.Point(0, 0),
           labelStyle: {
@@ -89151,102 +89263,6 @@ function (_Component) {
 if (document.getElementById('welcome')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('welcome'));
 }
-
-/***/ }),
-
-/***/ "./resources/js/components/mapStyles.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/mapStyles.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  featureType: "water",
-  elementType: "geometry",
-  stylers: [{
-    color: "#004358"
-  }]
-}, {
-  featureType: "landscape",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }]
-}, {
-  featureType: "poi",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }]
-}, {
-  featureType: "road.highway",
-  elementType: "geometry",
-  stylers: [{
-    color: "#fd7400"
-  }]
-}, {
-  featureType: "road.arterial",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }, {
-    lightness: -20
-  }]
-}, {
-  featureType: "road.local",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }, {
-    lightness: -17
-  }]
-}, {
-  elementType: "labels.text.stroke",
-  stylers: [{
-    color: "#ffffff"
-  }, {
-    visibility: "on"
-  }, {
-    weight: 0.9
-  }]
-}, {
-  elementType: "labels.text.fill",
-  stylers: [{
-    visibility: "on"
-  }, {
-    color: "#ffffff"
-  }]
-}, {
-  featureType: "poi",
-  elementType: "labels",
-  stylers: [{
-    visibility: "simplified"
-  }]
-}, {
-  elementType: "labels.icon",
-  stylers: [{
-    visibility: "off"
-  }]
-}, {
-  featureType: "transit",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }, {
-    lightness: -10
-  }]
-}, {}, {
-  featureType: "administrative",
-  elementType: "geometry",
-  stylers: [{
-    color: "#1f8a70"
-  }, {
-    weight: 0.7
-  }]
-}]);
 
 /***/ }),
 

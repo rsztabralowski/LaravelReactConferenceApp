@@ -11,8 +11,9 @@
 
         <!-- Styles -->
         <style>
+
+         
             html, body {
-                background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -20,14 +21,17 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
+            }
+
+            .my-container{
+                max-width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                
             }
 
             .position-ref {
@@ -41,6 +45,7 @@
             }
 
             .content {
+                margin-top: 100px; 
                 text-align: center;
                 width: 100%;
             }
@@ -71,28 +76,35 @@
                 font-size: 25px;
             }
 
+            ul {
+                list-style-type: none;
+            }
+
 
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class="my-container">
+            <div class="flex-center position-ref">
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+
+                <div class="content">
+                    <div id="welcome" class="m-b-md"></div>
+                    <div id="map"></div>
+                    <div id="attendees"></div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div id="welcome" class="m-b-md"></div>
-                <div id="map"></div>
             </div>
         </div>
     </body>

@@ -89008,7 +89008,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch("../eventbrite/eventbrite.php").then(function (res) {
+      fetch("../conference/eventbrite/eventbrite.php").then(function (res) {
         return res.json();
       }).then(function (result) {
         _this2.setState({
@@ -89047,25 +89047,7 @@ function (_React$Component) {
   }]);
 
   return Attendees;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // export default class Attendees extends Component {
-//     render() {
-//          function List()
-//          {
-//             var list = '';
-//                $.ajax({
-//                 url: '../eventbrite/eventbrite.php',
-//                 success: function(result)
-//                 {
-//                   return result;
-//                 }
-//             });
-//         }
-//         return (
-//             <List />
-//             );
-//     }
-// }
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
 

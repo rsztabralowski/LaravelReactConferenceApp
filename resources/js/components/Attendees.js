@@ -12,7 +12,7 @@ export default class Attendees extends React.Component {
     }
   
     componentDidMount() {
-      fetch("../eventbrite/eventbrite.php")
+      fetch("../conference/eventbrite/eventbrite.php")
         .then(res => res.json())
         .then(
           (result) => {

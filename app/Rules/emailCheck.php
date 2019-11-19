@@ -26,7 +26,7 @@ class emailCheck implements Rule
     public function passes($attribute, $value)
     {
 
-        $emails = file_get_contents('https://icingprint.co.uk/script/event_email.php');
+        $emails = file_get_contents('https://icingprint.co.uk/script/eventbrite/event_email.php');
 
         $emails_array = json_decode($emails, true);
 

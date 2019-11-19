@@ -53,6 +53,23 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users', new emailCheck],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'order_id' => [
+                function ($attribute, $value, $fail)
+                {
+                    $order_id = file_get_contents('https://icingprint.co.uk/script/eventbrite/order_id.php');
+
+                    $order_id = json_decode($order_id, true);
+
+                    if(array_key_exists(request()->email, $order_id))
+                    {
+                        if(!in_array($value, $order_id[request()->email]))
+                        {
+                            $fail($value. ' is invalid');
+                        }
+                    }
+                }
+            ],
+            
         ]);
     }
 

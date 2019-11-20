@@ -41,9 +41,9 @@ export default class Attendees extends React.Component {
             <div>
                 <p className="total">{list.total}</p>
                 <ul>
-                {list.attendees.map(attendee => (
-                    <li key={attendee}>
-                        {attendee}
+                {list.attendees.map((attendee, i) => (
+                    <li key={attendee.orders[0]}>
+                        {attendee.name} {attendee.count}
                     </li>
                     ))}
                 </ul>

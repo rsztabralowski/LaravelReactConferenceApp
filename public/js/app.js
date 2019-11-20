@@ -89037,10 +89037,10 @@ function (_React$Component) {
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "total"
-        }, list.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, list.attendees.map(function (attendee) {
+        }, list.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, list.attendees.map(function (attendee, i) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-            key: attendee
-          }, attendee);
+            key: attendee.orders[0]
+          }, attendee.name, attendee.count);
         })));
       }
     }

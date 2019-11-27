@@ -4,16 +4,14 @@ import ReactDOM from 'react-dom';
 export default class Example extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header front-title">Front.End</div>
-                            <div className="card-body developers-subtitle">Developers Conference</div>
-                        </div>
-                    </div>
+            
+                <div>
+                    <img className="img-fluid" src="img/background_img.jpg"></img>
+                    <h1>Front.End</h1>
+                    <h4>Developers Conference 2019</h4>
+                    <h4>Edinburgh 15th - 17th November</h4>
                 </div>
-            </div>
+
         );
     }
 }

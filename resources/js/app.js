@@ -15,3 +15,6 @@ require('./bootstrap');
 require('./components/Welcome');
 require('./components/GoogleMap');
 require('./components/Attendees');
+require('./components/events');
+require('./components/sponsors');
+require('./components/eschedule');

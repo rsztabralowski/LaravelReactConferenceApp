@@ -12,7 +12,9 @@
     </header>
     <section>
         <div id="eschedule" class="mb-5"></div>
+        <div id="map"></div>
     </section>
+    <br /><br />
         <div id="sponsors"></div>
 </div>
 @endsection

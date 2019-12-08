@@ -8,7 +8,8 @@ export default class Eschedule extends Component {
             
         <div className="container">
             <div>
-              <h2>Day 1 - React</h2>
+              <hr />
+              <h3>Day 1 - React</h3>
               <div>
                 <ul>
                   <li>08:30 - 09:20 Tea and Coffee</li>
@@ -17,12 +18,12 @@ export default class Eschedule extends Component {
                   <li>14:30 - 17:00 React part 2</li>
                 </ul>
 
-                <a href="index.html">READ MORE</a>
               </div>
             </div>
             
             <div>
-              <h2>Day 2 - CSS3 and Sass</h2>
+            <hr />
+              <h3>Day 2 - CSS3 and Sass</h3>
               <div>
                 <ul>
                   <li>08:30 - 09:20 Tea and Coffee</li>
@@ -31,12 +32,12 @@ export default class Eschedule extends Component {
                   <li>14:30 - 17:00 Sass</li>
                 </ul>
                 
-                <a href="index.html">READ MORE</a>
               </div>
             </div>
            
             <div>
-              <h2>Day 3 - Layout and Media</h2>
+            <hr />
+              <h3>Day 3 - Layout and Media</h3>
               <div>
                 <ul>
                   <li>08:30 - 09:20 Tea and Coffee</li>
@@ -44,8 +45,8 @@ export default class Eschedule extends Component {
                   <li>13:00 - 14:20 Lunch</li>
                   <li>14:30 - 17:00 Trends</li>
                 </ul>
+            <hr />
                 
-                <a href="index.html">READ MORE</a>
               </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ export default class Example extends Component {
             
                 <div>
                     <img className="img-fluid" src="img/background_img.jpg"></img>
+                    <br /><br />
                     <h1>Front.End</h1>
                     <h4>Developers Conference 2019</h4>
                     <h4>Edinburgh 15th - 17th November</h4>

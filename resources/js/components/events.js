@@ -60,14 +60,10 @@ export default class Events extends Component {
                 </div>
                   
                 
-                <div className="text-center">
-                  <a className="btn btn-primary" type="button" href="https://www.eventbrite.co.uk/e/frontend-developers-conference-tickets-81871677391">BOOK NOW</a>
-                </div>
+                
           </div>
 
-          <div className="card-footer text-center">
-            <button className="btn btn-primary" type="button">Read More</button>
-          </div>
+         
 
       </div>
 
@@ -125,14 +121,10 @@ export default class Events extends Component {
                 </div>
                   
                 
-                <div className="text-center">
-                  <a className="btn btn-primary" type="button" href="https://www.eventbrite.co.uk/e/frontend-developers-conference-tickets-81871677391">BOOK NOW</a>
-                </div>
+                
           </div>
 
-          <div className="card-footer text-center">
-            <button className="btn btn-primary" type="button">Read More</button>
-          </div>
+         
         </div>
 
         
@@ -178,14 +170,10 @@ export default class Events extends Component {
                 </div>
                   
                 
-                <div className="text-center">
-                  <a className="btn btn-primary" type="button" href="https://www.eventbrite.co.uk/e/frontend-developers-conference-tickets-81871677391" target="_blank">BOOK NOW</a>
-                </div>
+                
           </div>
 
-          <div className="card-footer text-center">
-            <button className="btn btn-primary" type="button">Read More</button>
-          </div>
+         
 
         </div>
       </div>

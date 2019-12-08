@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth'], ['except' => ['map','events']]);
+        $this->middleware(['auth'], ['except' => ['map','events', 'info']]);
     }
 
     /**
@@ -34,5 +34,10 @@ class HomeController extends Controller
     public function events()
     {
         return view('events');
+    }
+
+    public function info()
+    {
+        return view('info');
     }
 }

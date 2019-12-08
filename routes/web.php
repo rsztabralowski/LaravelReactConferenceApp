@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/map', 'HomeController@map')->name('map');
 
 Route::get('/events', 'HomeController@events')->name('events');
+
+Route::get('/info', 'HomeController@info')->name('info');

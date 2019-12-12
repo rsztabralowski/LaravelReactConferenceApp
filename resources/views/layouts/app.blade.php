@@ -45,6 +45,12 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('events') }}">{{ __('Events') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('info') }}">{{ __('Info') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
@@ -52,22 +58,13 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('map') }}">{{ __('Map') }}</a>
-                            </li> --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('events') }}">{{ __('Events') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('info') }}">{{ __('Info') }}</a>
-                            </li>
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('map') }}">{{ __('Map') }}</a>
-                            </li> --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('list') }}">{{ __('List') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('events') }}">{{ __('Events') }}</a>
                             </li>

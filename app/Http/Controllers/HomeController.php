@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
     public function map()
@@ -39,5 +39,10 @@ class HomeController extends Controller
     public function info()
     {
         return view('info');
+    }
+
+    public function list()
+    {
+        return view('list');
     }
 }
